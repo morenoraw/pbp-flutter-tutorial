@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pbpflutter/form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -110,6 +111,34 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+      // Menambahkan drawer menu
+      drawer: Drawer(
+      child: Column(
+        children: [
+          // Menambahkan clickable menu
+          ListTile(
+            title: const Text('Counter'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MyHomePage(title: '',)),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Form'),
+            onTap: () {
+              // Route menu ke halaman form
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MyFormPage()),
+              );
+            },
+          ),
+        ],
+      ),
+    ),
     );
   }
 }
