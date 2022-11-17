@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbpflutter/main.dart';
+import 'package:pbpflutter/page/to_do_page.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key});
@@ -50,6 +51,16 @@ class _MyFormPageState extends State<MyFormPage> {
                 );
               },
             ),
+            ListTile(
+            title: const Text('To Do'),
+            onTap: () {
+                // Route menu ke halaman to do
+                Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const ToDoPage()),
+                );
+            },
+        ),
           ],
         ),
       ),
@@ -233,7 +244,6 @@ class _MyFormPageState extends State<MyFormPage> {
                                       const Center(
                                           child: Text('Informasi Data')),
                                       const SizedBox(height: 20),
-                                      // TODO: Munculkan informasi yang didapat dari form
                                       Text('Nama Lengkap: $_namaLengkap'),
                                       if (jenjangSarjana)
                                         const Text('Jenjang: Sarjana'),
